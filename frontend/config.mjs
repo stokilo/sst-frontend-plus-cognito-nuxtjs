@@ -33,4 +33,3 @@ await fetchAwsConfig(env)
         process.exit(1)
     }
 }
-
