@@ -1,0 +1,6 @@
+{
+  "name": "sst-auth",
+  "region": "me-south-1",
+  "lint": true,
+  "typeCheck": true
+}

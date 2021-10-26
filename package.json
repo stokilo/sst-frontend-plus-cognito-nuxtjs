@@ -1,0 +1,29 @@
+{
+  "name": "sst-auth",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "sst test",
+    "start": "sst start",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "postdeploy-dev": "cd frontend && yarn deploy-dev",
+    "postdeploy-prod": "cd frontend && yarn deploy-prod",
+    "deploy-dev": "sst deploy --stage dev",
+    "deploy-prod": "sst deploy --stage prod",
+    "undeploy-dev": "sst remove --stage dev",
+    "undeploy-prod": "sst remove --stage prod",
+    "remove": "sst remove"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.126.0",
+    "@aws-cdk/core": "1.126.0",
+    "@aws-sdk/client-ssm": "^3.37.0",
+    "@serverless-stack/cli": "0.47.0",
+    "@serverless-stack/resources": "0.47.0",
+    "@types/aws-lambda": "^8.10.84"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.38.0"
+  }
+}
