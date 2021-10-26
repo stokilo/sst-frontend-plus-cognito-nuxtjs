@@ -23,10 +23,6 @@ await fetchAwsConfig(env)
             new GetParameterCommand({ Name: '/account/stacks-config' }))
         ).Parameter.Value
 
-        const accountConfigJSON = JSON.parse(accountConfig)
-        // accountConfigJSON.redirectSignIn = env === 'dev' ? 'https://dev.stokilo.com' : env === 'prod' ? 'https://stokilo.com' : 'http://localhost:3000/'
-        // accountConfigJSON.redirectSignOut = env === 'dev' ? 'https://dev.stokilo.com' : env === 'prod' ? 'https://stokilo.com' : 'http://localhost:3000/'
-
         const accountConfigPretty = JSON.stringify(JSON.parse(JSON.stringify(accountConfigJSON)), null, 4)
         fs.writeFileSync(path.join('./', 'aws-config.json'), accountConfigPretty)
 
